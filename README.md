@@ -1,11 +1,8 @@
 # development-abap-playbook
 Playbook for ABAPers
-[sapj-cookbook.md](https://github.com/user-attachments/files/25906726/sapj-cookbook.md)
+
 ---
-SAP Application Job Scheduling — Step-by-Step Cookbook
-description: "A practical recipe-style guide for creating Job Catalogs, Job Templates, and scheduling Application Jobs using SAPJ, F2058, and F1240."
-layout: default
-nav_order: 1
+#SAP Application Job Scheduling — Step-by-Step Cookbook
 ---
 
 # SAP Application Job Scheduling (SAPJ)
