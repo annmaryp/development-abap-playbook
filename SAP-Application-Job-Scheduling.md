@@ -1,17 +1,13 @@
-# development-abap-playbook 
-
----
-#SAP Application Job Scheduling — Step-by-Step Cookbook
----
+[development-abap-playbook]
 
 # SAP Application Job Scheduling (SAPJ)
 ## Step-by-Step Cookbook
 
-> A practical recipe-style guide for creating Job Catalogs, Job Templates, and scheduling Application Jobs.   
+A practical recipe-style guide for creating Job Catalogs, Job Templates, and scheduling Application Jobs.   
 
 ---
 
-| Attribute | Value |
+|||
 |---|---|
 | **Document Type** | Cookbook (Step-by-Step Procedural Guide) |
 | **Audience** | Developers (Recipes A, B) + Functional Users (Recipe C) |
