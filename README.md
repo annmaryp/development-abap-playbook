@@ -5,7 +5,7 @@
 
 | Topic | Description | Apps |
 |---|---|---|
-| [SAP Application Job Scheduling (SAPJ)](./sapj-cookbook) | Step-by-step cookbook for creating Job Catalogs, Job Templates, and scheduling Application Jobs | F2058 and F1240. |
+| [SAP Application Job Scheduling (SAPJ)](./sapj-cookbook.md) | Step-by-step cookbook for creating Job Catalogs, Job Templates, and scheduling Application Jobs | F2058 and F1240. |
 
 ---
 
