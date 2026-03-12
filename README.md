@@ -1,4 +1,4 @@
-README
+
 # Playbook for ABAPers
 
 ## Contents
