@@ -3,7 +3,7 @@
 layout: default
 title: SAP Application Job Scheduling - Cookbook
 ---
-[Home (https://annmaryp.github.io/development-abap-playbook/)]
+[Home](https://annmaryp.github.io/development-abap-playbook/)
 
 # SAP Application Job Scheduling (SAPJ)
 ## Step-by-Step Cookbook
@@ -25,25 +25,28 @@ A practical recipe-style guide for creating Job Catalogs, Job Templates, and sch
 
 This cookbook contains three recipes, each representing a distinct task in the SAP Application Job Scheduling lifecycle. Each recipe is self-contained and includes prerequisites, exact steps, field values, and post-completion checks.
 
-| Recipe | Task | Tool / App | Who |
-|---|---|---|---|
-| **A** | Create a Job Catalog Entry | Transaction SYCM | Developer |
-| **B** | Create a Job Template | Fiori App F2058 | Developer |
+| Recipe | Task | Who |
+|---|---|--- |
+| **A** | Create a Job Catalog Entry  | Developer |
+| **B** | Create a Job Template | Developer |
 | **C** | Schedule an Application Job | Fiori App F1240 | Functional User |
 
 ---
 
 ## Recipe A — Create a Job Catalog Entry
 
-> **Tool:** Transaction SYCM &nbsp;|&nbsp; **System:** DEV &nbsp;|&nbsp; **Who:** Developer
+> **Tool:** Eclipse &nbsp;|&nbsp; **System:** DEV &nbsp;|&nbsp; **Who:** Developer
 
 ### Prerequisites
 
 - You have an ABAP class that implements `IF_APJ_DT_EXEC_OBJECT` (methods `EXECUTE` and `GET_PARAMETERS` are implemented).
+  - Reference #1: [Implementing the Business Logic](https://help.sap.com/docs/btp/sap-business-technology-platform/implementing-business-logic?locale=en-US)
+  - Reference #2: [Creating an ABAP Class with Interface IF_APJ_RT_RUN](https://help.sap.com/docs/btp/sap-business-technology-platform/creating-abap-class-with-interface-if-apj-rt-run?locale=en-US)
 - The class is activated and syntactically correct.
-- You have authorisation for transaction `SYCM` (role `S_BTCH_ADM` or equivalent).
+- You have authorisation to create 'Application Job Catalog Entry' using Eclipse.
+- You have authorization to create 'Application Job Template' using Eclipse. 
 - A transport request is open or you are authorised to create one.
-- Naming convention for the Catalog ID has been agreed (see guidelines document).
+- You are aware of the naming convention for Job Catalogs and Job Templates (see naming conventions document).
 
 ---
 
@@ -53,8 +56,8 @@ This cookbook contains three recipes, each representing a distinct task in the S
 
 | Sub-step | Action |
 |---|---|
-| 1.1 | Log on to the DEV SAP system. |
-| 1.2 | In the command field (transaction bar), type: `SYCM` and press **Enter**. |
+| 1.1 | Log on to the DEV SAP system in Eclipse. |
+| 1.2 | Follow the instructions in this PDF: <a href="./Z0001_SAP_Application Jobs - Scheduling.pdf" target="_blank">View PDF</a> |
 | 1.3 | The *Maintain Job Catalog* screen opens, showing existing catalog entries in a list. |
 
 ---
