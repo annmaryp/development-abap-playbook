@@ -51,14 +51,13 @@ This cookbook contains three recipes, each representing a distinct task in the S
 ---
 
 ### Steps
-
+Reference:  <a href="./Z0001_SAP_Application Jobs - Scheduling.pdf" target="_blank">Creating Application Job Catalog Entries</a>
 #### Step 1 — Launch Transaction SYCM
 
 | Sub-step | Action |
 |---|---|
 | 1.1 | Log on to the DEV SAP system in Eclipse. |
 | 1.2 | Follow the instructions in this PDF: <a href="./Z0001_SAP_Application Jobs - Scheduling.pdf" target="_blank">View PDF</a> |
-| 1.3 | The *Maintain Job Catalog* screen opens, showing existing catalog entries in a list. |
 
 ---
 
