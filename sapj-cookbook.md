@@ -5,6 +5,8 @@ title: SAP Application Job Scheduling - Cookbook
 ---
 [Home](https://annmaryp.github.io/development-abap-playbook/)
 
+The work on this file is in progress...
+
 # SAP Application Job Scheduling (SAPJ)
 ## Step-by-Step Cookbook
 
@@ -52,12 +54,11 @@ This cookbook contains three recipes, each representing a distinct task in the S
 
 ### Steps
 Reference:  <a href="./Z0001_SAP_Application Jobs - Scheduling.pdf" target="_blank">Creating Application Job Catalog Entries</a>
-#### Step 1 — Launch Transaction SYCM
+#### Step 1 — Launch Eclipse
 
 | Sub-step | Action |
 |---|---|
-| 1.1 | Log on to the DEV SAP system in Eclipse. |
-| 1.2 | Follow the instructions in this PDF: <a href="./Z0001_SAP_Application Jobs - Scheduling.pdf" target="_blank">View PDF</a> |
+| 1.1 | Log on to the DEV SAP system in Eclipse. | 
 
 ---
 
@@ -65,22 +66,19 @@ Reference:  <a href="./Z0001_SAP_Application Jobs - Scheduling.pdf" target="_bla
 
 | Sub-step | Action |
 |---|---|
-| 2.1 | Click the **New** button (or press **F5**) in the application toolbar. |
-| 2.2 | A new row appears in the catalog list, or a dialog box opens depending on your SAP release. |
-| 2.3 | If prompted, confirm that you want to create a new entry. |
+| 2.1 | Press **Ctrl+N**. |
+| 2.2 | A popup window appears. Here, under 'Application Jobs*, choose **Application Job Catalog Entry**. | 
 
 ---
 
-#### Step 3 — Enter the Catalog ID and Basic Details
+#### Step 3 — Enter the Catalog Name and Basic Details
 
 | Sub-step | Action |
 |---|---|
-| 3.1 | **Catalog ID:** Enter your ID following the naming convention, e.g. `ZFI_PAYMENT_RUN_JC` |
-| 3.2 | **Description:** Enter a clear, business-readable description in English, e.g. *FI Payment Run - Automatic Payment Program* |
-| 3.3 | **Class Name:** Enter the fully qualified ABAP class name, e.g. `ZCL_FI_PAYMENT_RUN_BATCH` |
-| 3.4 | Verify the class name resolves (no error indicator) — the system validates the class exists. |
-
-> ⚠️ **Note:** The Class Name must be the exact global class name in SE24, including the namespace prefix.
+| 3.1 | **Catalog Name:** Enter the catalog name following the naming conventions. |
+| 3.2 | **Description:** Enter a clear, business-readable description in English. |
+| 3.3 | **Class Name:** Enter the fully qualified ABAP class name. |
+| 3.4 | **Package Name:** Enter an appropriate package to which the object must belong. |
 
 ---
 
@@ -94,22 +92,11 @@ Reference:  <a href="./Z0001_SAP_Application Jobs - Scheduling.pdf" target="_bla
 | 4.4 | Set the **Locked** flag for parameters whose default value must not be changed by the functional user. |
 | 4.5 | Assign **F4 Value Help** for parameters that have restricted allowed values (link to existing search helps or fixed value lists). |
 
-> ⚠️ **Note:** At minimum, any parameter that directly affects data selection or output scope must be visible to the user.
+> **Note:** At minimum, any parameter that directly affects data selection or output scope must be visible to the user.
 
 ---
 
-#### Step 5 — Assign to a Package and Transport
-
-| Sub-step | Action |
-|---|---|
-| 5.1 | Click the **Package** assignment button (or navigate to the transport assignment dialog). |
-| 5.2 | Enter or select your development package, e.g. `Z_FI_BATCH`. |
-| 5.3 | When prompted for a transport request, enter your existing transport number or click **Create Request** to generate a new one. |
-| 5.4 | Provide a meaningful transport description, e.g. *SAPJ Job Catalog - FI Payment Run*. |
-
----
-
-#### Step 6 — Save and Activate
+#### Step 5 — Save and Activate
 
 | Sub-step | Action |
 |---|---|
@@ -121,7 +108,6 @@ Reference:  <a href="./Z0001_SAP_Application Jobs - Scheduling.pdf" target="_bla
 
 ### ✅ Post-Completion Check — Recipe A
 
-- [ ] In SYCM, locate your new entry in the list by searching for your Catalog ID.
 - [ ] Confirm the Status is **Active**.
 - [ ] Confirm the Class Name resolves without error (no red indicator).
 - [ ] Confirm all parameters are listed and visibility flags are correct.
@@ -132,7 +118,7 @@ Reference:  <a href="./Z0001_SAP_Application Jobs - Scheduling.pdf" target="_bla
 
 ## Recipe B — Create a Job Template
 
-> **Tool:** Fiori App F2058 (Application Job Templates) &nbsp;|&nbsp; **System:** DEV &nbsp;|&nbsp; **Who:** Developer
+> **Tool:** Eclipse &nbsp;|&nbsp; **System:** DEV &nbsp;|&nbsp; **Who:** Developer
 
 ### Prerequisites
 
@@ -145,48 +131,33 @@ Reference:  <a href="./Z0001_SAP_Application Jobs - Scheduling.pdf" target="_bla
 
 ### Steps
 
-#### Step 1 — Open Fiori App F2058
+#### Ste 1 - Create a new Job Template
 
-| Sub-step | Action |
+| Step | Action |
 |---|---|
-| 1.1 | Log on to the SAP Fiori Launchpad in the DEV system. |
-| 1.2 | Search for *Application Job Templates* in the search bar, or navigate to the tile in your assigned group. |
-| 1.3 | Click the tile to open F2058. The template list screen opens. |
+| 1 | Launch Eclipse. |
+| 2 | Press **Ctrl+N**. From the sub-folder 'Application Jobs', select **Application Job Template**. |
+| 3 | Click **Next**. |
+| 4 | Choose the transport request. |
+| 5 | Click **Finish**. |
+
+<img width="500" height="454" alt="image" src="https://github.com/user-attachments/assets/703ef9c2-5a1c-4005-b86a-6158d39c72b2" />
+
+--- 
+> **Note:** The Template Name must be unique across all templates for the same catalog entry. Use names that describe the specific scenario, not just the job.
 
 ---
 
-#### Step 2 — Create a New Template
+#### Step 2 — Set Default Parameter Values
 
 | Sub-step | Action |
 |---|---|
-| 2.1 | Click the **+** (Create) button in the upper right of the template list. |
-| 2.2 | A new template creation dialog or form opens. |
-
----
-
-#### Step 3 — Enter Template Identification
-
-| Sub-step | Action |
-|---|---|
-| 3.1 | **Template Name:** Enter a unique, descriptive name. Example: *FI Payment Run - Domestic Weekly* |
-| 3.2 | **Description:** Enter a longer description explaining the purpose and intended use case. |
-| 3.3 | **Job Catalog Entry:** Click the value help (F4) and select your catalog entry, e.g. `ZFI_PAYMENT_RUN_JC` |
-| 3.4 | After selecting the catalog entry, the system loads the parameter list defined in that catalog entry. |
-
-> ⚠️ **Note:** The Template Name must be unique across all templates for the same catalog entry. Use names that describe the specific scenario, not just the job.
-
----
-
-#### Step 4 — Set Default Parameter Values
-
-| Sub-step | Action |
-|---|---|
-| 4.1 | The parameter list from the catalog entry is displayed. For each visible parameter: |
-| 4.2 | Enter the default value that should be pre-filled when a functional user uses this template. |
-| 4.3 | For **Locked** parameters: enter the fixed value. The functional user will see this value but cannot change it. |
-| 4.4 | For **Required** parameters without a default: leave blank — the user must supply a value at scheduling time. |
-| 4.5 | For **Optional** parameters: entering a default makes scheduling faster; the user can still override unless locked. |
-| 4.6 | *Example:* Company Code: `1000` (locked); Payment Method: `C` (default, not locked); Posting Date: blank (required, user fills at runtime). |
+| 2.1 | The parameter list from the catalog entry is displayed. For each visible parameter: |
+| 2.2 | Enter the default value that should be pre-filled when a functional user uses this template. |
+| 2.3 | For **Locked** parameters: enter the fixed value. The functional user will see this value but cannot change it. |
+| 2.4 | For **Required** parameters without a default: leave blank — the user must supply a value at scheduling time. |
+| 2.5 | For **Optional** parameters: entering a default makes scheduling faster; the user can still override unless locked. |
+| 2.6 | *Example:* Company Code: `1000` (locked); Payment Method: `C` (default, not locked); Posting Date: blank (required, user fills at runtime). |
 
 ---
 
