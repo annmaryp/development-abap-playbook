@@ -1,10 +1,5 @@
-[Home](https://github.com/user-attachments/files/25907655/index.md)
----
- 
 
 # Playbook for ABAPers
-
----
 
 ## Contents
 
