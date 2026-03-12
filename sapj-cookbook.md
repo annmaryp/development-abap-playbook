@@ -3,7 +3,7 @@
 layout: default
 title: SAP Application Job Scheduling - Cookbook
 ---
-[development-abap-playbook (https://annmaryp.github.io/development-abap-playbook/)]
+[Home (https://annmaryp.github.io/development-abap-playbook/)]
 
 # SAP Application Job Scheduling (SAPJ)
 ## Step-by-Step Cookbook
